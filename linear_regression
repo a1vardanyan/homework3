@@ -8,8 +8,7 @@ x_test_to_predict = np.matrix(np.random.normal(1,1,N*M)).reshape(N,M)
 #####This class takes into account possible known heteroscedasticity of errors
 ###############
 class LinearRegression_:
-    "This class helps to construct linear regression of vector y on vector x.\you can get 0) fit, 1) predict, 2) coef, 3) intercept, 4) coef_error, 5) intercept_error, 6) mean_square_error"
-    
+    "multivariate OLS with heteroscedasticity"
     def __init__(self, Y, X):
         self.X = np.c_[np.ones(X.shape[0]), X]
         self.Y = Y
