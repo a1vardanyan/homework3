@@ -21,24 +21,24 @@ class LinearRegression_:
         self.mse = ((Y - self.X*((self.X.T*self.X)**(-1)*self.X.T*Y)).T*(Y - self.X*((self.X.T*self.X)**(-1)*self.X.T*Y))).tolist()[0][0]
     def fit(self):
         "this is beta_hat vector"
-        print(self.beta_hat)
+        return self.beta_hat
     def intercept(self):
         "this is intercept i.e. beta_hat[0]"
-        print(self.beta_hat[0])
+        return self.beta_hat[0]
     def coef(self):
         "these are coefficients i.e. beta_hat[1:K]"
-        print(self.beta_hat[1:])
+        return self.beta_hat[1:]
     def coef_error(self, omega = None):
         "Var(beta_hat|X), where Omega is Var(e|X), in case of homoscedastic it takes I_nxn matrix by default"
         if omega == None:
             omega = np.diag(np.full(self.M,1))
-        print(self.proj*omega*self.proj.T)
+        return self.proj*omega*self.proj.T
     def errors(self):
         "vector of residuals"
-        print(self.e)
+        return self.e
     def mean_square_error(self):
         "MSE"
-        print(self.mse)          
+        return self.mse        
     def predict(self, x):
         "predict y on x"
-        print((np.c_[np.ones(self.M), x])*self.beta_hat2)
+        return (np.c_[np.ones(self.M), x])*self.beta_hat2
